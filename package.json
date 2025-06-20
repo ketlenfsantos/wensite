@@ -13,6 +13,6 @@
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "copy:fonts": "cpx \"src/fonts/**/*\" dist/fonts",
-    "build": "npm run build:css && npm run copy:fonts"
+    "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
   }
 }
