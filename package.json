@@ -10,9 +10,11 @@
   "devDependencies": {
     "cpx": "^1.5.0"
   },
-  "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "copy:fonts": "cpx \"src/fonts/**/*\" dist/fonts",
-    "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
-  }
+"scripts": {
+  "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+  "copy:fonts": "cpx \"src/fonts/**/*\" ./dist/fonts",
+  "copy:html": "cpx \"./src/index.html\" ./dist",
+  "build": "npm run copy:html && npm run copy:fonts && npm run build:css",
+  "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+}
 }
